@@ -1,0 +1,30 @@
+{
+  "name": "Senac Blackboard Trello integration",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Create Trello cards with blackboard course content",
+  "homepage_url": "http://rapatao.com",
+  "icons": {
+    "16": "icons/icon.png",
+    "48": "icons/icon.png",
+    "128": "icons/icon.png"
+  },
+  "default_locale": "en",
+  "page_action": {
+    "default_icon": "icons/icon.png",
+    "default_title": "Senac Blackboard Trello integration",
+    "default_popup": "src/page_action/page_action.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://senacsp.blackboard.com/*"
+      ],
+      "js": [
+        "js/jquery/jquery.min.js",
+        "src/inject/inject.js",
+        "src/inject/trello.js"
+      ]
+    }
+  ]
+}
